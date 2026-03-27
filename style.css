@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #202541;
+}
+h1{
+    color: #fff;
+    padding-right: 200px;
+    padding-left: 50px;
+}
+header{
+    display: flex;
+    align-items: center;
+    margin: 10px 10px 10px;
+    padding: 20px 0;
+    position: relative;
+    border: 1px solid #363a528c;
+    border-radius: 20px;
+    height: 50px;
+}
+
+input{
+    width: 400px;
+    border-radius: 2px;
+    border: none;
+    background-color: #2b304d;
+}
