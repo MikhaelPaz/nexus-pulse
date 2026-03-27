@@ -5,52 +5,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus Pulse</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <h1>NEXUS PULSE</h1>
-        <div style="position: relative; display: inline-block;"> <svg
-                style=" position: absolute; left: 10px; top: 50%; transform: translateY(-50%); pointer-events: none; width: 16px; height: 16px; fill: #888; "
-                viewBox="0 0 24 24">
-                <path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" stroke="#888" stroke-width="2"
-                    fill="none" stroke-linecap="round" />
-            </svg> <input type="text" placeholder="Pesquisar..."
-                style="padding-left: 36px; padding: 8px 8px 8px 36px; border: 1px solid #ccc; border-radius: 6px;">
-    </header>
-    <nav>
-        <h4>Streamers</h4>
-        <h4>E-Sports</h4>
-        <h4>Hall-Stars</h4>
-        <main>
-            <div onclick="toggleDiv()" style="cursor: pointer;"><img src="img/Tom_Clancys_Rainbow_Six_Siege_X2026-2-4-13-44-6.jpg" alt="Streamer 1"></div>
-            <div id="minhaDiv" style="display: none;">
-                <p>DADOS</p> <img src="" alt="Stramer 2"> <img src="" alt="Streamer 3"> <img src="" alt="Jogador 1">
-                <img src="" alt="Jogador 2"> <img src="" alt="Jogaodr 3">
-        </main>
-    </nav>
-    <article>
-        <h4>JOGOS</h4> <img src="" alt="League of Legends"> <img src="" alt="CS2"> <img src="" alt="Valorant">
-    </article>
-    <aside> </aside>
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-left">
-                <h2>Nexus Pulse</h2>
-                <p>Conectando você ao futuro da tecnologia.</p>
-            </div>
-            <div class="footer-center">
-                <p>© 2026 Nexus Pulse. Todos os direitos reservados.</p>
-            </div>
-            <div class="footer-right">
-                <p>Desenvolvido por <strong>Dev's Curiosos</strong></p>
-            </div>
-        </div>
-    </footer>
-    <div onclick="toggleDiv()" style="cursor: pointer;">Mostrar / Esconder</div>
-    <div id="minhaDiv" style="display: none;"> Conteúdo aqui </div>
-    <script> function toggleDiv() { const div = document.getElementById('minhaDiv'); if (div.style.display === 'none') { div.style.display = 'block'; } else { div.style.display = 'none'; } } </script>
-</body>
 
+<header>
+    <h1>NEXUS PULSE</h1>
+
+    <div style="position: relative; display: inline-block;">
+        <svg style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px;"
+            viewBox="0 0 24 24">
+            <path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"
+                stroke="#888" stroke-width="2" fill="none" stroke-linecap="round" />
+        </svg>
+
+        <input type="text" placeholder="Pesquisar..."
+            style="padding: 8px 8px 8px 36px; border: 1px solid #ccc; border-radius: 6px;">
+    </div>
+</header>
+
+<nav>
+    <h4>Streamers</h4>
+    <h4>E-Sports</h4>
+    <h4>Hall-Stars</h4>
+</nav>
+
+<main>
+
+    <!-- Casemiro -->
+    <div onclick="toggleDiv('dados-casemiro')" style="cursor: pointer;">
+        <img src="img/streamer-casimiro - Copia.jpg" alt="Casemiro">
+    </div>
+
+    <div id="dados-casemiro" class="dados">
+        <p>DADOS Casemiro</p>
+    </div>
+
+    <!-- Neymar -->
+    <div onclick="toggleDiv('dados-neymar')" style="cursor: pointer;">
+        <img src="img/streamer-neymar - Copia.jpg" alt="Neymar">
+    </div>
+
+    <div id="dados-neymar" class="dados">
+        <p>DADOS Neymar</p>
+    </div>
+
+    <!-- Ninja -->
+    <div onclick="toggleDiv('dados-ninja')" style="cursor: pointer;">
+        <img src="img/streamer-ninja - Copia.jpg" alt="Ninja">
+    </div>
+
+    <div id="dados-ninja" class="dados">
+        <p>DADOS Ninja</p>
+    </div>
+
+    <div id="painel" class="painel">
+    <h3 id="nome"></h3>
+    <p id="info"></p>
+</div>
+
+</main>
+
+<article>
+    <h4>JOGOS</h4>
+    <img src="" alt="League of Legends">
+    <img src="" alt="CS2">
+    <img src="" alt="Valorant">
+</article>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div>
+            <h2>Nexus Pulse</h2>
+            <p>Conectando você ao futuro da tecnologia.</p>
+        </div>
+
+        <div>
+            <p>© 2026 Nexus Pulse</p>
+        </div>
+
+        <div>
+            <p>Dev's Curiosos</p>
+        </div>
+
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
 </html>
