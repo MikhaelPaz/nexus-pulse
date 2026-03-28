@@ -95,19 +95,7 @@ main img:hover {
 }
 
 
-.painel {
-    position: fixed;
-    top: 100px;
-    right: 40px;
-    width: 320px;
-    background: rgba(20, 20, 40, 0.8);
-    backdrop-filter: blur(15px);
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 25px;
-    display: none; /* Será ativado pelo JS */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
+
 
 
 article {
@@ -125,4 +113,104 @@ article img {
 
 article img:hover {
     filter: brightness(1);
+}
+
+
+/* Layout em Grade */
+.grid-streamers {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 30px 50px;
+}
+
+/* Estilo do Card */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(138, 79, 255, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #8a4fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: none; /* Remove bordas antigas */
+    box-shadow: none;
+    margin: 0;
+}
+
+.card-info {
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.card-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.card-info p {
+    color: #a0a0c0;
+    font-size: 0.85rem;
+}
+
+/* Etiqueta "LIVE" */
+.status-live {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ff4f7b;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    z-index: 10;
+}
+
+/* Painel Lateral Estilizado */
+.painel-lateral {
+    position: fixed;
+    top: 120px;
+    right: 40px;
+    width: 350px;
+    background: rgba(15, 15, 30, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(138, 79, 255, 0.3);
+    border-radius: 25px;
+    padding: 30px;
+    display: none;
+    z-index: 100;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
+    font-size: 0.9rem;
+    color: #a0a0c0;
+}
+
+.btn-campaign {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #8a4fff, #4fb3ff);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
 }
