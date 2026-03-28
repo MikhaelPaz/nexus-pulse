@@ -1,66 +1,128 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/*VARIAVEIS DE CORES*/
+:root {
+    --bg-color: #0b0a1a;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --accent-purple: #8a4fff;
+    --border-color: rgba(138, 79, 255, 0.3);
+    --text-secondary: #a0a0c0;
 }
-body{
-    background: #202541;
+
+body {
+    background: radial-gradient(circle at top right, #1a1535, #0b0a1a);
     color: #fff;
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
 }
 
-.painel{
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 250px;
-    background: #222;
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    display: none;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
 
-h1{
-    color: #fff;
-    padding-right: 200px;
-    padding-left: 50px;
-}
-header{
+header {
     display: flex;
     align-items: center;
-    margin: 10px 10px 10px;
-    padding: 20px 0;
-    position: relative;
-    border: 1px solid #363a528c;
-    border-radius: 20px;
-    height: 50px;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
 }
 
-input{
-    width: 400px;
-    border-radius: 2px;
-    border: none;
-    background-color: #2b304d;
+header h1 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: #fff;
+    padding: 0;
 }
-img{
-    width: auto;
-    height: 200px;
-    border-top: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 
-    0 0 6px 2px rgba(255, 255, 255, 0.4),
-    0 0 20px 4px rgba(255, 255, 255, 0.2);
-    margin-left: 5px;
-}
-nav{
-    display: flex;
-    flex-direction:row;
-    gap: 20px;
-    padding: 20px;
-    border: 1px solid #363a528c;
-    border-radius: 8px;
-    margin: 10px 10px 10px;
-    padding: 10px;
+
+input {
     width: 300px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: white;
+    padding: 8px 15px 8px 40px !important;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 10px rgba(138, 79, 255, 0.5);
+}
+
+
+nav {
+    display: flex;
+    gap: 15px;
+    padding: 10px 40px;
+    background: transparent;
+    border: none;
+}
+
+nav h4 {
+    font-weight: 400;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+nav h4:hover {
+    color: var(--accent-purple);
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px 40px;
+}
+
+main img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: none; /* Resetando o estilo antigo */
+    margin: 0;
+}
+
+main img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(138, 79, 255, 0.4);
+    border-color: var(--accent-purple);
+}
+
+
+.painel {
+    position: fixed;
+    top: 100px;
+    right: 40px;
+    width: 320px;
+    background: rgba(20, 20, 40, 0.8);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 25px;
+    display: none; /* Será ativado pelo JS */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+
+article {
+    padding: 20px 40px;
+}
+
+article img {
+    height: 120px;
+    width: 220px;
+    border-radius: 12px;
+    margin-right: 15px;
+    border: 1px solid var(--border-color);
+    filter: brightness(0.7);
+}
+
+article img:hover {
+    filter: brightness(1);
 }
