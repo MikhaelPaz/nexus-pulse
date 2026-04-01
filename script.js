@@ -1,12 +1,14 @@
-function mostrarDados(nome, info, followers, followers_number, viewers) {
-    if (painel.style.display === 'none') {
-        const painel = document.getElementById("painel");
-        const nomeEl = document.getElementById("nome");
-        const infoEl = document.getElementById("info");
-        const followersEl = document.getElementById("followers");
-        const followers_numberEl = document.getElementById("followers_number");
-        const viewersEl = document.getElementById("viewers");
+const painel = document.getElementById("painel");
+const nomeEl = document.getElementById("nome");
+const infoEl = document.getElementById("info");
+const followersEl = document.getElementById("followers");
+const followers_numberEl = document.getElementById("followers_number");
+const viewersEl = document.getElementById("viewers");
 
+
+function mostrarDados(nome, info, followers, followers_number, viewers) {    
+    if (painel.style.display === 'none') {
+       
 
         nomeEl.textContent = nome;
         infoEl.textContent = info;
