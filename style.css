@@ -94,10 +94,6 @@ main img:hover {
     border-color: var(--accent-purple);
 }
 
-
-
-
-
 article {
     padding: 20px 40px;
 }
@@ -215,51 +211,124 @@ article img:hover {
     margin-top: 20px;
 }
 
-
 /* --- RESPONSIVIDADE --- */
 
-/* TABLETS (Até 1024px) */
+/* ============================================================
+   RESPONSIVIDADE COMPLETA (TABLET & MOBILE)
+   ============================================================ */
+
+/* 1. ELEMENTOS GERAIS DO MENU HAMBÚRGUER */
+.menu-toggle {
+    display: none; /* Escondido no desktop */
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1100;
+    position: relative;
+    margin-right: 10px;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--accent-purple);
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Camada de Desfoque (Overlay) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* --- AJUSTES PARA TABLET (Até 1024px) --- */
 @media (max-width: 1024px) {
-    header {
-        padding: 15px 20px;
-    }
-
-    input {
-        width: 200px; 
-    }
-
-    main, .grid-streamers, nav, article {
-        padding: 20px;
-    }
-
+    header { padding: 15px 20px; }
+    input { width: 220px; }
+    main, .grid-streamers, article { padding: 20px; }
+    
     .painel-lateral {
-        width: 300px;
+        width: 280px;
         right: 20px;
     }
 }
 
-/* MOBILE (Até 768px) */
+/* --- AJUSTES PARA MOBILE (Até 768px) --- */
 @media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* Compensa o header fixed */
+    }
+
     header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        z-index: 1050;
+        box-sizing: border-box;
     }
 
-    input {
-        width: 85%;
+    .menu-toggle {
+        display: flex; /* Mostra o botão no mobile */
     }
 
+    /* Transformação do Nav em Menu Lateral */
     nav {
-        justify-content: center;
-        overflow-x: auto;
-        white-space: nowrap;
-        padding: 10px 20px;
+        position: fixed;
+        top: 0;
+        right: -100%; /* Começa fora da tela */
+        width: 280px;
+        height: 100vh;
+        background: rgba(11, 10, 26, 0.98);
+        border-left: 1px solid var(--border-color);
+        display: flex;
+        flex-direction: column;
+        padding: 100px 30px;
+        gap: 25px;
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1080;
     }
 
+    nav.active {
+        right: 0; /* Desliza para dentro */
+    }
+
+    nav h4 {
+        font-size: 1.2rem;
+        margin: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        padding-bottom: 10px;
+    }
+
+    /* Input ocupa largura total abaixo do logo */
+    input {
+        width: 100%;
+        order: 3; /* Joga o input para a linha de baixo */
+        margin-top: 15px;
+    }
+
+
+    /* Ajuste de Grades */
     main {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: 15px;
+        padding: 20px;
     }
 
     .grid-streamers {
@@ -267,6 +336,11 @@ article img:hover {
         padding: 15px;
     }
 
+    .card img {
+        height: 200px;
+    }
+
+    /* Painel Lateral vira bloco normal */
     .painel-lateral {
         position: relative;
         top: 0;
@@ -276,20 +350,22 @@ article img:hover {
         margin-top: 20px;
     }
 
+    /* Animação do Ícone X */
+    .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+}
+
+/* --- CELULARES PEQUENOS (Até 480px) --- */
+@media (max-width: 480px) {
+    header h1 { font-size: 1rem; }
     article img {
         width: 100%;
         height: auto;
-        margin-bottom: 10px;
     }
 }
 
-/* AJUSTES PARA CELULARES PEQUENOS (Até 480px) */
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1rem;
-    }
-    
-    .card img {
-        height: 200px;
-    }
-}
+
+
+
+
