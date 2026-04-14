@@ -35,3 +35,28 @@ function mostrarDadosJogadores(nome, info, valorAproveitamento) {
 
     painel.style.display = "block";
 }
+
+function fecharPainel() {
+    const painel = document.getElementById("painel");
+    painel.style.display = "none";
+}
+
+// Close panel when clicking outside of it
+document.addEventListener('click', function(event) {
+    const painel = document.getElementById('painel');
+    const cardClicked = event.target.closest('.card');
+    
+    if (cardClicked) {
+        // Card click: do nothing (onclick handlers will open panel)
+        return;
+    }
+    
+    if (painel.style.display === 'block' && !painel.contains(event.target)) {
+        fecharPainel();
+    }
+});
+
+// Prevent panel clicks from bubbling (optional safety)
+document.getElementById('painel').addEventListener('click', function(event) {
+    event.stopPropagation();
+});
