@@ -69,11 +69,18 @@ nav h4:hover {
 }
 
 
-main {
+.conteudo-principal {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 20px;
-    padding: 20px 40px;
+    grid-template-columns: minmax(0, 1fr) 350px;
+    gap: 30px;
+    padding: 30px 40px;
+    align-items: start;
+}
+
+.cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
 }
 
 main img {
@@ -97,31 +104,51 @@ main img:hover {
 article {
     padding: 20px 40px;
 }
-
-article img {
-    height: 120px;
-    width: 220px;
-    border-radius: 12px;
-    margin-right: 15px;
-    border: 1px solid var(--border-color);
-    filter: brightness(0.7);
+.games-section {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
-article img:hover {
-    filter: brightness(1);
+.section-header h2 {
+    margin: 0 0 6px;
+    font-size: 1.35rem;
 }
 
+.section-header p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
 
-/* Layout em Grade */
-.grid-streamers {
+.cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
     gap: 25px;
-    padding: 30px 50px;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 260px));
+    gap: 20px;
+}
+
+.games-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: 0.3s;
+}
+
+.games-grid img:hover {
+    filter: brightness(1);
 }
 
 /* Estilo do Card */
 .card {
+    margin-top: 40px;
+    margin-bottom: 60px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(138, 79, 255, 0.2);
     border-radius: 15px;
@@ -132,18 +159,15 @@ article img:hover {
 }
 
 .card:hover {
-    transform: translateY(-10px);
     border-color: #8a4fff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 .card img {
     width: 100%;
-    height: 250px;
+    aspect-ratio: 1 / 1;
+    height: auto;
     object-fit: cover;
-    border: none; /* Remove bordas antigas */
-    box-shadow: none;
-    margin: 0;
 }
 
 .card-info {
@@ -177,10 +201,9 @@ article img:hover {
 
 /* Painel Lateral Estilizado */
 .painel-lateral {
-    position: fixed;
-    top: 120px;
-    right: 40px;
-    width: 350px;
+    position: sticky;
+    top: 10px;
+    width: 100%;
     background: rgba(15, 15, 30, 0.95);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(138, 79, 255, 0.3);
@@ -374,3 +397,13 @@ article img:hover {
 
 
 
+@media (max-width: 1024px) {
+    .conteudo-principal {
+        grid-template-columns: 1fr;
+    }
+
+    .painel-lateral {
+        position: static;
+        max-width: 100%;
+    }
+}

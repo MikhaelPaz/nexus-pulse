@@ -29,111 +29,156 @@
     </nav>
 
     <div style="position: relative; display: inline-block;">
-        <svg style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px;"
+        <svg
+            style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px;"
             viewBox="0 0 24 24">
-            <path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"
-                stroke="#888" stroke-width="2" fill="none" stroke-linecap="round" />
+            <path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" stroke="#888" stroke-width="2"
+                fill="none" stroke-linecap="round" />
         </svg>
 
-        <input type="text" placeholder="Pesquisar..."
-            style="padding: 8px 8px 8px 36px;">
+        <input type="text" placeholder="Pesquisar..." style="padding: 8px 8px 8px 36px;">
     </div>
 </header>
 
 
-<h3 class="title-grid">Streamer</h3>
-<main class="grid-streamers">
+<main class="conteudo-principal">
+    <div class="cards-wrapper">
+        <section class="cards-section">
+            <div class="section-header">
+                <h2>Streamers em destaque</h2>
+                <p>Perfis com live, audiência e alcance para campanhas.</p>
+            </div>
 
-    <!-- Card do Casimiro -->
-    <div class="card" onclick="mostrarDados('Casimiro', 'O maior streamer do Brasil. Reage a tudo e transmite jogos ao vivo.' , 'Followers', '3.8M', '500K')">
-        <div class="status-live">LIVE</div>
-        <img src="img/streamer-casimiro - Copia.jpg" alt="Casimiro">
-        <div class="card-info">
-            <h3>Casimiro</h3>
-            <p class="seguidor">3.8M Followers</p>
-        </div>
+            <div class="cards-grid">
+                <div class="card"
+                    onclick="mostrarDadosStreamers('Casimiro', 'O maior streamer do Brasil. Reage a tudo e transmite jogos ao vivo.', 'Followers', '3.8M', '500K')">
+                    <div class="status-live">LIVE</div>
+                    <img src="img/streamer-casimiro - Copia.jpg" alt="Casimiro">
+                    <div class="card-info">
+                        <h3>Casimiro</h3>
+                        <p>3.8M Followers</p>
+                    </div>
+                </div>
+
+                <div class="card"
+                    onclick="mostrarDadosStreamers('Neymar', 'Craque nos campos e nos games. Joga CS2 e interage com o chat.', 'Followers', '2.1M', '9K')">
+                    <div class="status-live">LIVE</div>
+                    <img src="img/streamer-neymar - Copia.jpg" alt="Neymar">
+                    <div class="card-info">
+                        <h3>Neymar Jr</h3>
+                        <p>2.1M Followers</p>
+                    </div>
+                </div>
+
+                <div class="card"
+                    onclick="mostrarDadosStreamers('Ninja', 'Lenda do Fortnite e um dos maiores streamers do mundo.', 'Followers', '18.5M', '5.6K')">
+                    <div class="status-live">LIVE</div>
+                    <img src="img/streamer-ninja - Copia.jpg" alt="Ninja">
+                    <div class="card-info">
+                        <h3>Ninja</h3>
+                        <p>18.5M Followers</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cards-section">
+            <div class="section-header">
+                <h2>Jogadores de E-Sports</h2>
+                <p>Atletas com histórico competitivo e potencial de performance.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card"
+                    onclick="mostrarDadosJogadores('Gordox', 'Jogador profissional de LoL conhecido pelo humor e estilo descontraido.', '0,50')">
+                    <img src="img/jogador-gordox.jpg" alt="Gordox">
+                    <div class="card-info">
+                        <h3>Gordox</h3>
+                        <p>0,50 Aproveitamento</p>
+                    </div>
+                </div>
+
+                <div class="card"
+                    onclick="mostrarDadosJogadores('Fallen', 'Jogador de CS conhecido pela lideranca, leitura de jogo e habilidade com AWP.', '0,60')">
+                    <img src="img/img_fallen.jpg" alt="Fallen">
+                    <div class="card-info">
+                        <h3>Fallen</h3>
+                        <p>0,60 Aproveitamento</p>
+                    </div>
+                </div>
+
+                <div class="card"
+                    onclick="mostrarDadosJogadores('Aspas', 'Erick Aspas Santos é um duelista brasileiro de elite no Valorant, conhecido por sua agressividade, precisão e capacidade de decidir partidas sozinho.', '0,60')">
+                    <img src="img/jogador-aspas.webp" alt="Aspas">
+                    <div class="card-info">
+                        <h3>Aspas</h3>
+                        <p>0,70 Aproveitamento</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="games-section">
+            <div class="section-header">
+                <h2>Jogos</h2>
+                <p>Titulos em alta no ecossistema competitivo.</p>
+            </div>
+
+            <div class="games-grid">
+                <img src="img/img_league_of_legends.jpg" alt="League of Legends">
+                <img src="img/img_cs2.jpg" alt="CS2">
+                <img src="img/img_valorant.png" alt="Valorant">
+            </div>
+        </section>
     </div>
 
-    <!-- Card do Neymar --> 
-    <div class="card" onclick="mostrarDados('Neymar', 'Craque nos campos e nos games. Joga CS2 e interage com o chat.', 'Followers', '2.1M', '9K')">
-        <div class="status-live">LIVE</div>
-        <img src="img/streamer-neymar - Copia.jpg" alt="Neymar">
-        <div class="card-info">
-            <h3>Neymar Jr</h3>
-            <p>2.1M Followers</p>
-        </div>
-    </div>
-
-    <!-- Card do Ninja -->
-    <div class="card" onclick="mostrarDados('Ninja', 'Lenda do Fortnite e um dos maiores streamers do mundo.', 'Followers', '18.5M', '5.6K')">
-        <div class="status-live">LIVE</div>
-        <img src="img/streamer-ninja - Copia.jpg" alt="Ninja">
-        <div class="card-info">
-            <h3>Ninja</h3>
-            <p>18.5M Followers</p>
-        </div>
-    </div>
-    
-    <!-- O painel de dados lateral -->
-    <div id="painel" class="painel-lateral">
+    <aside id="painel" class="painel-lateral" style="display: none;">
         <div class="perfil-header">
             <div class="foto-perfil"></div>
             <h2 id="nome"></h2>
         </div>
+
         <div class="stats-grid">
-            <div><strong id="followers"></strong><p id="followers_number"></p></div>
-            <div><strong>Avg. Viewers</strong><p id="viewers"></p></div>
+            <div>
+                <strong id="followers-label">Followers</strong>
+                <p id="followers_number"></p>
+            </div>
+            <div>
+                <strong>Avg. Viewers</strong>
+                <p id="viewers"></p>
+            </div>
+            <div>
+                <strong>Aproveitamento</strong>
+                <p id="aproveitamento"></p>
+            </div>
         </div>
+
         <p id="info"></p>
         <button class="btn-campaign">Select for Campaign</button>
-    </div>
+    </aside>
 </main>
 
-<h3 class="title-grid">Jogadores</h3>
 
-
-<section class="grid-streamers">
-
-    
-    <div class="card" onclick="mostrarDados('Ninja', 'Lenda do Fortnite e um dos maiores streamers do mundo.', 'Followers', '18.5M', '5.6K')">
-        <img src="img/streamer-ninja - Copia.jpg" alt="Ninja">
-        <div class="card-info">
-            <h3>Ninja</h3>
-            <p>18.5M Followers</p>
-        </div>
-    </div>
-
-
-</section>
-
-
-<article>
-    <h4 class="title-grid">JOGOS</h4>
-    <img src="img/Tom_Clancys_Rainbow_Six_Siege_X2026-2-4-13-44-6.jpg" alt="League of Legends">
-    <img src="img/Tom_Clancys_Rainbow_Six_Siege_X2026-2-4-13-44-6.jpg" alt="CS2">
-    <img src="img/Tom_Clancys_Rainbow_Six_Siege_X2026-2-4-13-44-6.jpg" alt="Valorant">
-</article>
 
 <footer class="footer">
     <div class="footer-container">
-
         <div>
             <h2>Nexus Pulse</h2>
-            <p>Conectando você ao futuro da tecnologia.</p>
+            <p>Conectando voce ao futuro da tecnologia.</p>
         </div>
 
         <div>
-            <p>© 2026 Nexus Pulse</p>
+            <p>&copy; 2026 Nexus Horizon</p>
         </div>
 
         <div>
             <p>Dev's Curiosos</p>
         </div>
-
     </div>
 </footer>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
